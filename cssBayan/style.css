@@ -127,6 +127,50 @@ label {
     }
 }
 
+@media screen and (min-width: 1024px) {
+    h1 {
+        cursor: pointer;
+    }
+
+    .icon {
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .wrapper:hover {
+        color: black;
+        display: block;
+    }
+
+    .acc:checked+.text .icon {
+        opacity: 0;
+        transform: rotate(90deg);
+    }
+
+    .wrapper:hover .text .icon {
+        opacity: 1;
+    }
+
+    .item {
+        cursor: pointer;
+    }
+
+    .item label {
+        cursor: pointer;
+    }
+
+    label:hover .content .mem {
+        width: auto;
+        height: auto;
+        overflow: visible;
+        margin-bottom: 4rem;
+    }
+
+    label:hover .text .icon {
+        transform: rotate(90deg);
+    }
+}
+
 @media screen and (min-width: 1920px) {
     .wrapper {
         margin: 2rem auto;
