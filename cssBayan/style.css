@@ -75,6 +75,7 @@ label {
     height: 0;
     overflow: hidden;
     transition: all 1s ease;
+    opacity: 1;
 }
 
 .icon {
@@ -102,6 +103,12 @@ label {
 
 .acc:checked+.text {
     color: black;
+}
+
+.acc:active~.text,
+.acc:active~.content {
+    color: red;
+    opacity: 0.5;
 }
 
 @media screen and (min-width: 715px) {
