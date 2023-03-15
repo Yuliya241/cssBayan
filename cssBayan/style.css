@@ -27,7 +27,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
 }
 
 h1 {
@@ -62,20 +61,20 @@ label {
     width: 100%;
     height: 100%;
     display: block;
-    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .content {
-    display: flex;
-    justify-content: center;
+    height: 0;
+    width: 80%;
+    margin: auto;
+    transition: all 0.3s linear;
 }
 
 .mem {
-    max-width: 70%;
-    height: 0;
-    overflow: hidden;
-    transition: all 1s ease;
-    opacity: 1;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 
 .icon {
@@ -85,15 +84,8 @@ label {
     transition: all 1s ease-in-out;
 }
 
-.acc {
-    display: none;
-}
-
-.acc:checked~.content .mem {
-    width: auto;
-    height: auto;
-    overflow: visible;
-    margin-bottom: 1rem;
+.acc:checked~.content {
+    height: 40vw;
 }
 
 .acc:checked+.text .icon {
@@ -109,12 +101,6 @@ label {
 .acc:active~.content {
     color: red;
     opacity: 0.5;
-}
-
-@media screen and (min-width: 715px) {
-    .mem {
-        max-width: 100%;
-    }
 }
 
 @media screen and (min-width: 820px) {
@@ -166,11 +152,10 @@ label {
         cursor: pointer;
     }
 
-    label:hover .content .mem {
-        width: auto;
-        height: auto;
-        overflow: visible;
-        margin-bottom: 4rem;
+    label:hover .content {
+        width: 80%;
+        height: 40vw;
+        transition: all 0.3s linear;
     }
 
     label:hover .text .icon {
@@ -200,14 +185,24 @@ label {
         cursor: pointer;
     }
 
-    .wrapper:hover {
-        color: black;
-        display: block;
+    label:hover .content {
+        width: 80%;
+        height: 40vw;
+        transition: all 0.3s linear;
+    }
+
+    label:hover .text .icon {
+        transform: rotate(90deg);
     }
 
     .acc:checked+.text .icon {
         opacity: 0;
         transform: rotate(90deg);
+    }
+
+    .wrapper:hover {
+        color: black;
+        display: block;
     }
 
     .wrapper:hover .text .icon {
@@ -220,24 +215,5 @@ label {
 
     .item label {
         cursor: pointer;
-    }
-
-    .text {
-        margin-bottom: 1rem;
-    }
-
-    label {
-        padding-top: 1rem;
-    }
-
-    label:hover .content .mem {
-        width: auto;
-        height: auto;
-        overflow: visible;
-        margin-bottom: 4rem;
-    }
-
-    label:hover .text .icon {
-        transform: rotate(90deg);
     }
 }
